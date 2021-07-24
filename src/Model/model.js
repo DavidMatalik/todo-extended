@@ -39,11 +39,10 @@ const itemValidationModel = function () {
   }
 }
 
-module.exports = itemsCreationModel;
+module.exports = itemsCreationModel
 
 // export  {
 //             itemsCreationModel, itemValidationModel,
 //             tasksModelFactory, listsModelFactory
-        
-//         }
 
+//         }

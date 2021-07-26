@@ -32,9 +32,10 @@ describe('item tests', function () {
   })
 
   describe('id tests', function () {
-    it('should be able to get the id', function () {
+    it('id should be a valid uuid', function () {
       const item = new Item('myNewItem')
       const id = item.getId
+      // https://www.geeksforgeeks.org/how-to-validate-guid-globally-unique-identifier-using-regular-expression/
       assert.match(id, /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/)
     })
 

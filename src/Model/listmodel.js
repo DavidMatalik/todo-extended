@@ -1,20 +1,20 @@
 const Item = require('./itemmodel')
 
 class List extends Item {
-  constructor (title, active) {
-    super(title)
-    this.active = active
+  constructor (...args) {
+    super(...args)
+    this.active = true
     this.tasks = []
   }
 
-  getIdsByStatus (tasks, status) {
-    const statusTasksIds = []
+  getTasksByStatus (tasks, status) {
+    const statusTasks = []
     tasks.forEach(task => {
       if (task.done === status) {
-        statusTasksIds.push(task.id)
+        statusTasks.push(task)
       }
     })
-    return statusTasksIds
+    return statusTasks
   }
 }
 

@@ -11,7 +11,7 @@ describe('item tests', function () {
 
     xit('should be able to change the title', function () {
       const item = new Item('myItem')
-      item.setTitle('myChangedItem')
+      item.title = 'myChangedItem'
       const title = item.title
       assert.strictEqual(title, 'myChangedItem')
     })
@@ -26,7 +26,7 @@ describe('item tests', function () {
     it('should throw error if more than 255 title chars for setting', function () {
       const item = new Item('itemTitle')
       const createError = () => {
-        item.setTitle('More then 255 a\'s: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+        item.title = 'More then 255 a\'s: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
       }
       assert.throws(createError, new Error('too many characters'))
     })
@@ -41,7 +41,7 @@ describe('item tests', function () {
     xit('should throw error if no title chars for setting', function () {
       const createError = () => {
         const item = new Item('itemTitle')
-        item.setTitle('')
+        item.title = ''
       }
       assert.throws(createError, new Error('no characters'))
     })

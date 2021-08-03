@@ -19,6 +19,7 @@
     "url": "https://github.com/david-88/todo/issues"
   },
   "homepage": "https://github.com/david-88/todo#readme",
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",

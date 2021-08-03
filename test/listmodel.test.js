@@ -1,5 +1,6 @@
-const List = require('../src/Model/listmodel')
-const assert = require('assert')
+import { List } from '../src/Model/listmodel.js'
+import { describe, it } from 'mocha'
+import assert from 'assert'
 
 describe('list tests', function () {
   describe('id tests', function () {

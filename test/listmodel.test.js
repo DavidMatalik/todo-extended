@@ -16,4 +16,15 @@ describe('list tests', function () {
         { title: 'task4', id: '875b6011-ec60-4488-9806-d304f66d3e44', done: true }])
     })
   })
+  describe('active tests', function () {
+    it('should be able to get active value', function () {
+      const list1 = new List('list1')
+      assert.strictEqual(list1.active, true)
+    })
+    it('should be able to set active to false', function () {
+      const list1 = new List('list1')
+      list1.toggleActive()
+      assert.strictEqual(list1.active, false)
+    })
+  })
 })

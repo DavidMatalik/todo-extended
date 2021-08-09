@@ -1,5 +1,6 @@
-const Task = require('..src/Model/taskmodel')
-const assert = require('assert')
+// import Task from '../src/Model/taskmodel'
+import { describe, it } from 'mocha'
+import assert from 'assert'
 
 describe('task tests', function () {
   describe('done tests', function () {

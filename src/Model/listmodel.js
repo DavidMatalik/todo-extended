@@ -1,4 +1,4 @@
-const Item = require('./itemmodel')
+import { Item } from './itemmodel.js'
 
 class List extends Item {
   constructor (...args) {
@@ -18,4 +18,4 @@ class List extends Item {
   }
 }
 
-module.exports = List
+export { List }

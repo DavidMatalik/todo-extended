@@ -1,5 +1,6 @@
-const Item = require('../src/Model/itemmodel')
-const assert = require('assert')
+import { Item } from '../src/Model/itemmodel.js'
+import { describe, it, xit } from 'mocha'
+import assert from 'assert'
 
 describe('item tests', function () {
   describe('title tests', function () {

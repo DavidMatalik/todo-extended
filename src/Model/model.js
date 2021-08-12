@@ -39,7 +39,7 @@ const itemValidationModel = function () {
   }
 }
 
-module.exports = itemsCreationModel
+export { itemsCreationModel }
 
 // export  {
 //             itemsCreationModel, itemValidationModel,

@@ -23,7 +23,7 @@ describe('item tests', function () {
       assert.throws(createError, new Error('too many characters'))
     })
 
-    it('should throw error if more than 255 title chars for setting', function () {
+    it('should throw error if more than 255 chars for setting the title', function () {
       const item = new Item('itemTitle')
       const createError = () => {
         item.title = 'More then 255 a\'s: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
@@ -38,7 +38,7 @@ describe('item tests', function () {
       assert.throws(createError, new Error('no characters'))
     })
 
-    it('should throw error if no title chars for setting', function () {
+    it('should throw error if no chars for setting the title ', function () {
       const createError = () => {
         const item = new Item('itemTitle')
         item.title = ''

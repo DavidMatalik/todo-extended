@@ -1,8 +1,8 @@
 // using ES6 imports:
-import { getFirebaseClient } from './config'
-import { tasksViewFactory, listsViewFactory, itemsCreationView } from './view'
-import { tasksModelFactory, listsModelFactory, itemsCreationModel } from './model'
-import { tasksControllerFactory, listsControllerFactory, itemsCreationController } from './controller'
+import { getFirebaseClient } from '../auth/config'
+import { tasksViewFactory, listsViewFactory, itemsCreationView } from './view/view'
+import { tasksModelFactory, listsModelFactory, itemsCreationModel } from './model/model'
+import { tasksControllerFactory, listsControllerFactory, itemsCreationController } from './controller/controller'
 
 // Shortcuts to DOM Elements.
 var containerElement = document.getElementById('container');

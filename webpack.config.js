@@ -38,32 +38,3 @@ export default (env, argv) => {
       }
   };
 }
-
-
-// export const devtool = 'source-map' // enum
-// // Allow to use await on module evaluation (Proposal)
-// // Allow to output ESM
-// // outputModule: true,
-// export const experiments = { topLevelAwait: true }
-// export const entry = './src/index.js'
-// export const output = {
-//   filename: 'main.js',
-//   path: resolve(__dirname, 'dist')
-// }
-// export const devServer = {
-//   contentBase: './dist/'
-// }
-// export const module = {
-//   rules: [
-//     {
-//       test: /\.css$/,
-//       use: ['style-loader', 'css-loader']
-//     }
-//     // use this to make code es5 compatible
-//     // },
-//     // {
-//     //   test: /\.js$/,
-//     //   use: ['babel-loader']
-//     // }
-//   ]
-// }

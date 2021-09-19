@@ -1,3 +1,34 @@
+.  
+├── **.firebase/**  
+├── **.github/workflows/**  
+├── **.vscode/**  
+├── **dist/**  
+│     ├── favicon.ico  
+│     ├── index.html  
+│     ├── main.js  
+│     ├── main.js.LICENSE.txt  
+│     ├── main.js.map  
+│     ├── reset.css  
+│     ├── style.css  
+├── **src/**  
+│   ├── **Controller/**  
+│   ├── **Model/**  
+│   ├── **View/**  
+│   ├── config.js  
+│   ├── index.js  
+├── **test/**  
+├── .babelrc  
+├── .eslintrc.js  
+├── .firebaserc  
+├── .gitignore  
+├── README.md  
+├── TodoUML.drawio  
+├── firebase.json  
+├── package-lock.json  
+├── package.json  
+├── webpack.config.js  
+
+
 # How this app is structured
 
 It is a webpack project, so there are two folders: "dist" and "src".

@@ -1,4 +1,20 @@
+// Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code 
+// into a backwards compatible version of JavaScript in current and older browsers or environments.
 {
-    "presets": ["@babel/preset-env"],
-    "plugins": ["@babel/plugin-transform-runtime"] 
+    // Babel presets can act as sharable set of Babel plugins and/or config options.
+    "presets": [
+        [
+            // For compiling ES2015+ syntax
+            "@babel/preset-env",
+            {
+              // Describes the environments you support/target for your project.  
+              "targets": {
+                // https://babeljs.io/docs/en/babel-preset-env#targetsesmodules  
+                "esmodules": true
+              }
+            }
+          ]
+    ],
+    // Babel's code transformations are enabled by applying plugins (or presets) to your configuration file.
+    "plugins": ["@babel/plugin-transform-runtime"] // Externalise references to helpers and builtins, automatically polyfilling your code without polluting globals
 }

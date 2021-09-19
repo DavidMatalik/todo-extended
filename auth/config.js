@@ -10,15 +10,15 @@ const firebaseConfig = {
 }
 
 // this is a working example of lazy loading firebase
-// use of firebase esm files for webpack config in esm style
+// ToDo: Check modular style of firebase V9
 export async function getFirebaseClient () {
-  const { default: firebase } = await import('firebase/app/dist/index.esm.js')
+  const { default: firebase } = await import('firebase/app')
 
   await Promise.all([
-    import('firebase/auth/dist/index.esm.js'),
-    import('firebase/database/dist/index.esm.js'),
-    import('firebaseui/dist/esm.js'),
-    import('firebaseui/dist/firebaseui.css')
+    import('firebase/auth'),
+    import('firebase/database'),
+    import('firebaseui'),
+    import('firebaseui')
   ])
 
   firebase.initializeApp(firebaseConfig)

@@ -35,6 +35,12 @@ It is a webpack project, so there are two folders: "dist" and "src".
 - Run `npx webpack` to generate the latest main.js from index.js
 - Open index.html in browser of your choice
 
+# Firebase 
+
+- Use `npm run build` to build the project with webpack and deploy it to firebase hosting 
+- [You will find the hosted site under:](https://todo-extended.web.app)
+- Sometimes it's necessary to connect the local project with firebase, use `firebase login` or `firebase login --reauth` for this 
+
 # Tipps for better programming experience
 
 - Use `npx webpack --watch` - This updates main.js as soon as there is a change

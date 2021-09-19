@@ -1,4 +1,14 @@
-# How this app is structured
+# How to install Todo-app on Ubuntu
+
+- Install git: [Follow along this guide](https://github.com/git-guides/install-git)
+- Install npm: [Follow along this guide for doing it with nvm](https://github.com/TheOdinProject/curriculum/blob/master/foundations/installations/installing_node.md)
+- Create on your local machine an empty directory called "todo-extended" (Or whatever name you like)
+- Clone this Github repository into the created directory: [Follow along this guide](https://www.techiedelight.com/clone-a-git-repository-into-specific-folder/)
+- Install webpack locally for this project: [Follow along this tutorial](https://webpack.js.org/guides/getting-started/)
+- Run `npx webpack` to generate the latest main.js from index.js
+- Open index.html in browser of your choice
+
+# How Todo-app is structured
 
 .  
 ├── **.firebase/** <sub> --> *Contains a [firebase hosting file for a faster hosting deployment](https://stackoverflow.com/questions/52130772/whats-the-purpose-of-firebase-hosting-alphanum-cache).*</sub>   
@@ -29,16 +39,6 @@
 ├── package-lock.json &nbsp; <sub> --> *Guarantees that all installs have the same dependencies versions.*</sub>  
 ├── package.json &nbsp; <sub> --> *List of dependencies for this project, npm takes care of them.*</sub>  
 ├── webpack.config.js &nbsp; <sub> --> *Tells webpack how to work with this project.*</sub>  
-
-# How to install this app on Ubuntu
-
-- Install git: [Follow along this guide](https://github.com/git-guides/install-git)
-- Install npm: [Follow along this guide for doing it with nvm](https://github.com/TheOdinProject/curriculum/blob/master/foundations/installations/installing_node.md)
-- Create on your local machine an empty directory called "todo-extended" (Or whatever name you like)
-- Clone this Github repository into the created directory: [Follow along this guide](https://www.techiedelight.com/clone-a-git-repository-into-specific-folder/)
-- Install webpack locally for this project: [Follow along this tutorial](https://webpack.js.org/guides/getting-started/)
-- Run `npx webpack` to generate the latest main.js from index.js
-- Open index.html in browser of your choice
 
 # Tipps for better programming experience
 

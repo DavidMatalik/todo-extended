@@ -1,3 +1,9 @@
+// https://firebase.google.com/docs/cli/targets
+// https://firebase.google.com/docs/cli/
+// this file, the firebase.json and it's content is automatically created with the firebase cli comment 'firebase init'
+// it can be used to configure multiple firebase projects
+// by default it is only connected to one firebase projects
+// .firebaserc file example for multiple targets under one project: https://gist.github.com/vlaja/3821436df0bf37d95094bf6e2295d1a5
 {
   "projects": {
     "default": "todo-extended"

@@ -31,11 +31,11 @@
 ├── **test/**  
 ├── .babelrc &nbsp; <sub> --> *Conifgurations for babel - with Babel you can use newest ES functions.*</sub>  
 ├── .eslintrc.js  <sub> --> *Conifgurations for eslint - eslint helps to have consistent syntax and avoid errors.*</sub>  
-├── .firebaserc  
+├── .firebaserc  &nbsp; <sub> --> *Stores your project aliases.*</sub>  
 ├── .gitignore &nbsp; <sub> --> *List of all folders and files you don't want to synch to github.*</sub>  
 ├── README.md  
 ├── TodoUML.drawio  &nbsp; <sub> --> *Diagram of this app's objects and their relations.*</sub>  
-├── firebase.json  &nbsp; <sub> --> *Firebase configurations for hosting.*</sub>  
+├── firebase.json  &nbsp; <sub> --> *Lists your project's configuration.*</sub>  
 ├── package-lock.json &nbsp; <sub> --> *Guarantees that all installs have the same dependencies versions.*</sub>  
 ├── package.json &nbsp; <sub> --> *List of dependencies for this project, npm takes care of them.*</sub>  
 ├── webpack.config.js &nbsp; <sub> --> *Tells webpack how to work with this project.*</sub>  

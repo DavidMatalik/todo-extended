@@ -10,6 +10,7 @@ const firebaseConfig = {
 }
 
 // this is a working example of lazy loading firebase
+// ToDo: Check modular style of firebase V9
 export async function getFirebaseClient () {
   const { default: firebase } = await import('firebase/app')
 
@@ -17,7 +18,7 @@ export async function getFirebaseClient () {
     import('firebase/auth'),
     import('firebase/database'),
     import('firebaseui'),
-    import('firebaseui/dist/firebaseui.css')
+    import('firebaseui')
   ])
 
   firebase.initializeApp(firebaseConfig)

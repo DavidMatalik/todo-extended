@@ -1,8 +1,9 @@
 // using ES6 imports:
-import { getFirebaseClient } from './config'
-import { tasksViewFactory, listsViewFactory, itemsCreationView } from './view'
-import { tasksModelFactory, listsModelFactory, itemsCreationModel } from './model'
-import { tasksControllerFactory, listsControllerFactory, itemsCreationController } from './controller'
+// full qualified path for webpack esm style
+import { getFirebaseClient } from '../auth/config.js'
+import { tasksViewFactory, listsViewFactory, itemsCreationView } from './view/view.js'
+import { tasksModelFactory, listsModelFactory, itemsCreationModel } from './model/model.js'
+import { tasksControllerFactory, listsControllerFactory, itemsCreationController } from './controller/controller.js'
 
 // Shortcuts to DOM Elements.
 var containerElement = document.getElementById('container');

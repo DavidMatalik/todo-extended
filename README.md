@@ -6,7 +6,7 @@
 - Clone this Github repository into the created directory: [Follow along this guide](https://www.techiedelight.com/clone-a-git-repository-into-specific-folder/)
 - Install webpack locally for this project: [Follow along this tutorial](https://webpack.js.org/guides/getting-started/)
 - Run `npx webpack` to generate the latest main.js from index.js
-- Open index.html in browser of your choice
+- Open index.html in browser of your choice 
 
 # How Todo-app is structured
 
@@ -31,14 +31,20 @@
 ├── **test/**  
 ├── .babelrc &nbsp; <sub> --> *Conifgurations for babel - with Babel you can use newest ES functions.*</sub>  
 ├── .eslintrc.js  <sub> --> *Conifgurations for eslint - eslint helps to have consistent syntax and avoid errors.*</sub>  
-├── .firebaserc  &nbsp; <sub> --> *Stores your project aliases.*</sub>  
+├── .firebaserc &nbsp; <sub> --> *Firebase configuration file that stores your project aliases.*</sub>
 ├── .gitignore &nbsp; <sub> --> *List of all folders and files you don't want to synch to github.*</sub>  
 ├── README.md  
 ├── TodoUML.drawio  &nbsp; <sub> --> *Diagram of this app's objects and their relations.*</sub>  
-├── firebase.json  &nbsp; <sub> --> *Lists your project's configuration.*</sub>  
+├── firebase.json  &nbsp; <sub> --> *Firebase configuration file that lists your project configuration. [Documentation](https://github.com/DavidMatalik/todo-extended/wiki/Firebase.json-Dokumentation)*</sub>  
 ├── package-lock.json &nbsp; <sub> --> *Guarantees that all installs have the same dependencies versions.*</sub>  
 ├── package.json &nbsp; <sub> --> *List of dependencies for this project, npm takes care of them.*</sub>  
 ├── webpack.config.js &nbsp; <sub> --> *Tells webpack how to work with this project.*</sub>  
+
+# Firebase 
+
+- Use `npm run build` to build the project with webpack and deploy it to firebase hosting 
+- [You will find the hosted site under:](https://todo-extended.web.app)
+- Sometimes it's necessary to connect the local project with firebase, use `firebase login` or `firebase login --reauth` for this
 
 # Tipps for better programming experience
 

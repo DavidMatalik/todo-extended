@@ -4,7 +4,7 @@ class List extends Item {
   constructor (...args) {
     super(...args)
     this._active = true
-    this.tasks = []
+    this._tasks = []
   }
 
   get active () {
@@ -13,6 +13,22 @@ class List extends Item {
 
   toggleActive () {
     this._active = !this._active
+  }
+
+  get tasks () {
+    return this._tasks
+  }
+
+  addTask(task) {
+    this._tasks.push(task)
+  }
+
+  deleteTaskById (id) {
+    const taskIndex = this._tasks.findIndex(task => {
+      return task.id === id
+    })
+
+    this._tasks.splice(taskIndex, 1)
   }
 
   getTasksByStatus (tasks, status) {

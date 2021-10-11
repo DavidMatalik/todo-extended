@@ -3,8 +3,16 @@ import { Item } from './itemmodel.js'
 class List extends Item {
   constructor (...args) {
     super(...args)
-    this.active = true
+    this._active = true
     this.tasks = []
+  }
+
+  get active () {
+    return this._active
+  }
+
+  toggleActive () {
+    this._active = !this._active
   }
 
   getTasksByStatus (tasks, status) {

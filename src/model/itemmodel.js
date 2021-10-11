@@ -20,8 +20,6 @@ class Item {
   set title (newTitle) {
     this.checkTitle(newTitle)
     this._title = newTitle
-    
-    return this._title
   }
 
   get id () {

@@ -17,11 +17,11 @@ describe('list tests', function () {
     })
   })
   describe('active tests', function () {
-    xit('should be able to get active value', function () {
+    it('should be able to get active value', function () {
       const list1 = new List('list1')
       assert.strictEqual(list1.active, true)
     })
-    xit('should be able to set active to false', function () {
+    it('should be able to set active to false', function () {
       const list1 = new List('list1')
       list1.toggleActive()
       assert.strictEqual(list1.active, false)

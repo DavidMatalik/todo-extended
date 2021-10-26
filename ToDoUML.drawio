@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-15T21:11:20.938Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="6VGYq2McbakRsxfNu2uc" version="15.3.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-26T17:53:39.980Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="rIAUUNFMjIht1ey-jTVX" version="15.5.4" type="github">
   <diagram id="eOCSV4TAboX4JURnP9C4" name="Seite-1">
-    <mxGraphModel dx="2249" dy="776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2858" dy="1109" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -252,20 +252,20 @@
         <mxCell id="IUaXgcbuQcbtj2ld7xGD-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IUaXgcbuQcbtj2ld7xGD-1" target="IUaXgcbuQcbtj2ld7xGD-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="lHdzk7SYyGzFnMh_JmP9-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IUaXgcbuQcbtj2ld7xGD-1" target="lHdzk7SYyGzFnMh_JmP9-1">
+        <mxCell id="lHdzk7SYyGzFnMh_JmP9-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IUaXgcbuQcbtj2ld7xGD-1" target="lHdzk7SYyGzFnMh_JmP9-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="IUaXgcbuQcbtj2ld7xGD-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;usermodel.js&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- id: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- email: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- username: string&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ get(): returnType&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set(params)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- signIn&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- signOut&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- deleteAccount&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="1790.5" y="492.13" width="190" height="160" as="geometry" />
+          <mxGeometry x="1790.5" y="522.5" width="190" height="160" as="geometry" />
         </mxCell>
         <mxCell id="IUaXgcbuQcbtj2ld7xGD-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IUaXgcbuQcbtj2ld7xGD-2" target="IUaXgcbuQcbtj2ld7xGD-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="IUaXgcbuQcbtj2ld7xGD-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;usercontroller.js&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- authStateObserver &lt;sup&gt;7&lt;/sup&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="1790.5" y="775.5" width="190" height="160" as="geometry" />
+          <mxGeometry x="1790.5" y="816" width="190" height="160" as="geometry" />
         </mxCell>
         <mxCell id="IUaXgcbuQcbtj2ld7xGD-4" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;userview.js&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px&quot;&gt;+ renderSignIn&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px&quot;&gt;+ renderSignOut&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="1790.5" y="1075" width="190" height="160" as="geometry" />
+          <mxGeometry x="1790.5" y="1109" width="190" height="160" as="geometry" />
         </mxCell>
         <mxCell id="q-r9FgH-sSR5REQsNs2K-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="150" y="537" width="170" height="683" as="geometry" />
@@ -273,8 +273,8 @@
         <mxCell id="q-r9FgH-sSR5REQsNs2K-5" value="&lt;font style=&quot;font-size: 24px&quot;&gt;app.js&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="170" y="657" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="lHdzk7SYyGzFnMh_JmP9-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; text-align: left&quot;&gt;&lt;b&gt;userdbmapper.js&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
-          <mxGeometry x="2100" y="522.13" width="190" height="100" as="geometry" />
+        <mxCell id="lHdzk7SYyGzFnMh_JmP9-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; text-align: left&quot;&gt;&lt;b&gt;userdbmapper.js&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2110" y="552.5" width="190" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

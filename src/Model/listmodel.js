@@ -1,8 +1,8 @@
 import { Item } from './itemmodel.js'
 
 class List extends Item {
-  constructor (...args) {
-    super(...args)
+  constructor (title) {
+    super(title)
     this.active = true
     this.tasks = []
   }

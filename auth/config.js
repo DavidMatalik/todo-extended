@@ -9,19 +9,4 @@ const firebaseConfig = {
   appId: '1:462240940597:web:abbd267b519e7284b7277c'
 }
 
-// this is a working example of lazy loading firebase
-// ToDo: Check modular style of firebase V9
-export async function getFirebaseClient () {
-  const { default: firebase } = await import('firebase/app')
-
-  await Promise.all([
-    import('firebase/auth'),
-    import('firebase/database'),
-    import('firebaseui'),
-    import('firebaseui')
-  ])
-
-  firebase.initializeApp(firebaseConfig)
-
-  return firebase
-}
+export { firebaseConfig }

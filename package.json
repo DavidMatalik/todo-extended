@@ -42,8 +42,8 @@
     "webpack-dev-server": "^3.11.1"
   },
   "dependencies": {
-    "firebase": "^9.0.2",
-    "firebaseui": "^5.0.0",
+    "firebase": "^9.1.2",
+    "firebaseui": "^0.600.0",
     "style-loader": "^2.0.0"
   }
 }

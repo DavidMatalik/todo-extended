@@ -36507,9 +36507,16 @@ module.exports = function (list, options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "firebaseConfig": () => (/* binding */ firebaseConfig)
+/* harmony export */   "firebaseConfig": () => (/* binding */ firebaseConfig),
+/* harmony export */   "firebaseUiConfig": () => (/* binding */ firebaseUiConfig)
 /* harmony export */ });
-// Your web app's Firebase configuration
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/index.esm.js");
+/* harmony import */ var _src_view_userview_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/view/userview.js */ "./src/view/userview.js");
+/* harmony import */ var _src_model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/model/userdbmapper.js */ "./src/model/userdbmapper.js");
+
+
+ // Your web app's Firebase configuration
+
 var firebaseConfig = {
   apiKey: 'AIzaSyCGGMhr7m0KCFIM0ZgJOASzE1d2CF3KXJ8',
   authDomain: 'todo-extended.firebaseapp.com',
@@ -36518,20 +36525,39 @@ var firebaseConfig = {
   storageBucket: 'todo-extended.appspot.com',
   messagingSenderId: '462240940597',
   appId: '1:462240940597:web:abbd267b519e7284b7277c'
-}; // // this is a working example of lazy loading firebase
-// // ToDo: Check modular style of firebase V9
-// export async function getFirebaseClient () {
-//   const { default: firebase } = await import('firebase/app')
-//   await Promise.all([
-//     import('firebase/auth'),
-//     import('firebase/database'),
-//     import('firebaseui'),
-//     import('firebaseui')
-//   ])
-//   firebase.initializeApp(firebaseConfig)
-//   return firebase
-// }
+}; // Firebase UI configuration
 
+var firebaseUiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function signInSuccessWithAuthResult(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      if (authResult.user) {
+        (0,_src_view_userview_js__WEBPACK_IMPORTED_MODULE_1__.handleSignedInUser)(authResult.user);
+      }
+
+      (0,_src_model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_2__.writeUserData)(firebaseDatabase, authResult.user.uid, authResult.user.displayName, authResult.user.email, null);
+      document.getElementById('container').removeAttribute('hidden'); // Do not redirect.
+
+      return false;
+    },
+    uiShown: function uiShown() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  signInFlow: 'popup',
+  // signInSuccessUrl: 'https://todo-extended.web.app/',
+  signInOptions: [// Leave the lines as is for the providers you want to offer your users.
+  firebase_auth__WEBPACK_IMPORTED_MODULE_0__.GoogleAuthProvider.PROVIDER_ID, firebase_auth__WEBPACK_IMPORTED_MODULE_0__.EmailAuthProvider.PROVIDER_ID],
+  // Terms of service url.
+  tosUrl: '<your-tos-url>',
+  // Privacy policy url.
+  privacyPolicyUrl: '<your-privacy-policy-url>'
+};
 
 
 /***/ }),
@@ -36956,20 +36982,18 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth_config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../auth/config.js */ "./auth/config.js");
-/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/index.esm.js");
-/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/index.esm.js");
-/* harmony import */ var firebaseui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebaseui */ "./node_modules/firebaseui/dist/esm.js");
-/* harmony import */ var firebaseui_dist_firebaseui_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebaseui/dist/firebaseui.css */ "./node_modules/firebaseui/dist/firebaseui.css");
-/* harmony import */ var _view_userview_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./view/userview.js */ "./src/view/userview.js");
-/* harmony import */ var _model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./model/userdbmapper.js */ "./src/model/userdbmapper.js");
-/* harmony import */ var _view_view_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./view/view.js */ "./src/view/view.js");
-/* harmony import */ var _model_model_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./model/model.js */ "./src/model/model.js");
-/* harmony import */ var _controller_controller_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controller/controller.js */ "./src/controller/controller.js");
-/* harmony import */ var firebase_compat_app__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! firebase/compat/app */ "./node_modules/firebase/compat/app/dist/index.esm.js");
-/* harmony import */ var firebase_compat_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! firebase/compat/auth */ "./node_modules/firebase/compat/auth/dist/index.esm.js");
+/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/index.esm.js");
+/* harmony import */ var firebaseui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebaseui */ "./node_modules/firebaseui/dist/esm.js");
+/* harmony import */ var firebaseui_dist_firebaseui_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebaseui/dist/firebaseui.css */ "./node_modules/firebaseui/dist/firebaseui.css");
+/* harmony import */ var _view_userview_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./view/userview.js */ "./src/view/userview.js");
+/* harmony import */ var _model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./model/userdbmapper.js */ "./src/model/userdbmapper.js");
+/* harmony import */ var _view_view_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./view/view.js */ "./src/view/view.js");
+/* harmony import */ var _model_model_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./model/model.js */ "./src/model/model.js");
+/* harmony import */ var _controller_controller_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controller/controller.js */ "./src/controller/controller.js");
+/* harmony import */ var firebase_compat_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! firebase/compat/app */ "./node_modules/firebase/compat/app/dist/index.esm.js");
+/* harmony import */ var firebase_compat_auth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! firebase/compat/auth */ "./node_modules/firebase/compat/auth/dist/index.esm.js");
 // using ES6 imports:
 // full qualified path for webpack esm style
-
 
 
 
@@ -36981,65 +37005,34 @@ __webpack_require__.r(__webpack_exports__);
  // Firebase v9 compat (we use this until firebaseui is fully compatible with v9)
 
 
+ // #region Firebase UI Part
+// Initialize the FirebaseUI Widget using Firebase.
 
+var firebaseApp = firebase_compat_app__WEBPACK_IMPORTED_MODULE_9__.default.initializeApp(_auth_config_js__WEBPACK_IMPORTED_MODULE_0__.firebaseConfig);
+var firebaseUi = new firebaseui__WEBPACK_IMPORTED_MODULE_2__.auth.AuthUI(firebaseApp.auth());
+var firebaseDatabase = (0,firebase_database__WEBPACK_IMPORTED_MODULE_1__.getDatabase)(firebaseApp);
 /**
  * Initializes the app.
  */
 
 var initApp = function initApp() {
   document.getElementById('sign-out').addEventListener('click', function () {
-    firebase_compat_app__WEBPACK_IMPORTED_MODULE_10__.default.auth().signOut();
+    firebase_compat_app__WEBPACK_IMPORTED_MODULE_9__.default.auth().signOut();
   });
   document.getElementById('delete-account').addEventListener('click', function () {
-    (0,_model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_6__.deleteAccount)(firebase_compat_app__WEBPACK_IMPORTED_MODULE_10__.default, firebaseDatabase);
+    (0,_model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_5__.deleteAccount)(firebase_compat_app__WEBPACK_IMPORTED_MODULE_9__.default, firebaseDatabase);
   });
 };
 
-window.addEventListener('load', initApp); // #region Firebase UI Part
-// Initialize the FirebaseUI Widget using Firebase.
+window.addEventListener('load', initApp); // The start method will wait until the DOM is loaded.
 
-var firebaseApp = firebase_compat_app__WEBPACK_IMPORTED_MODULE_10__.default.initializeApp(_auth_config_js__WEBPACK_IMPORTED_MODULE_0__.firebaseConfig);
-var firebaseUi = new firebaseui__WEBPACK_IMPORTED_MODULE_3__.auth.AuthUI(firebaseApp.auth());
-var firebaseDatabase = (0,firebase_database__WEBPACK_IMPORTED_MODULE_2__.getDatabase)(firebaseApp);
-var firebaseUiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function signInSuccessWithAuthResult(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      if (authResult.user) {
-        (0,_view_userview_js__WEBPACK_IMPORTED_MODULE_5__.handleSignedInUser)(authResult.user);
-      }
-
-      (0,_model_userdbmapper_js__WEBPACK_IMPORTED_MODULE_6__.writeUserData)(firebaseDatabase, authResult.user.uid, authResult.user.displayName, authResult.user.email, null);
-      document.getElementById('container').removeAttribute('hidden'); // Do not redirect.
-
-      return false;
-    },
-    uiShown: function uiShown() {
-      // The widget is rendered.
-      // Hide the loader.
-      document.getElementById('loader').style.display = 'none';
-    }
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: 'popup',
-  // signInSuccessUrl: 'https://todo-extended.web.app/',
-  signInOptions: [// Leave the lines as is for the providers you want to offer your users.
-  firebase_auth__WEBPACK_IMPORTED_MODULE_1__.GoogleAuthProvider.PROVIDER_ID, firebase_auth__WEBPACK_IMPORTED_MODULE_1__.EmailAuthProvider.PROVIDER_ID],
-  // Terms of service url.
-  tosUrl: '<your-tos-url>',
-  // Privacy policy url.
-  privacyPolicyUrl: '<your-privacy-policy-url>'
-}; // The start method will wait until the DOM is loaded.
-
-firebaseUi.start('#firebaseui-auth-container', firebaseUiConfig); // Listen to change in auth state so it displays the correct UI for when
+firebaseUi.start('#firebaseui-auth-container', _auth_config_js__WEBPACK_IMPORTED_MODULE_0__.firebaseUiConfig); // Listen to change in auth state so it displays the correct UI for when
 // the user is signed in or not.
 
-firebase_compat_app__WEBPACK_IMPORTED_MODULE_10__.default.auth().onAuthStateChanged(function (user) {
+firebase_compat_app__WEBPACK_IMPORTED_MODULE_9__.default.auth().onAuthStateChanged(function (user) {
   document.getElementById('loader').style.display = 'none'; // document.getElementById('loaded').style.display = 'block';
 
-  user ? (0,_view_userview_js__WEBPACK_IMPORTED_MODULE_5__.handleSignedInUser)(user) : (0,_view_userview_js__WEBPACK_IMPORTED_MODULE_5__.handleSignedOutUser)(firebaseUi, firebaseUiConfig);
+  user ? (0,_view_userview_js__WEBPACK_IMPORTED_MODULE_4__.handleSignedInUser)(user) : (0,_view_userview_js__WEBPACK_IMPORTED_MODULE_4__.handleSignedOutUser)(firebaseUi, _auth_config_js__WEBPACK_IMPORTED_MODULE_0__.firebaseUiConfig);
 }); //#endregion
 // Everything for tasks
 
@@ -37047,14 +37040,14 @@ var tasksTargetElement = document.getElementById('tasks');
 var tasksTargetButton = document.getElementById('task-add');
 var tasksTargetField = document.getElementById('task-input');
 var initialTasksData = [];
-var tasksViewSpecifics = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_7__.tasksViewFactory)(tasksTargetElement, tasksTargetButton, tasksTargetField);
-var tasksCreationView = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_7__.itemsCreationView)('task');
+var tasksViewSpecifics = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_6__.tasksViewFactory)(tasksTargetElement, tasksTargetButton, tasksTargetField);
+var tasksCreationView = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_6__.itemsCreationView)('task');
 var tasksView = Object.assign({}, tasksViewSpecifics, tasksCreationView);
-var tasksModelSpecifics = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_8__.tasksModelFactory)();
-var tasksCreationModel = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_8__.itemsCreationModel)(initialTasksData);
+var tasksModelSpecifics = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_7__.tasksModelFactory)();
+var tasksCreationModel = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_7__.itemsCreationModel)(initialTasksData);
 var tasksModel = Object.assign({}, tasksModelSpecifics, tasksCreationModel);
-var tasksControllerSpecifics = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_9__.tasksControllerFactory)();
-var tasksCreationController = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_9__.itemsCreationController)(tasksView, tasksModel);
+var tasksControllerSpecifics = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_8__.tasksControllerFactory)();
+var tasksCreationController = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_8__.itemsCreationController)(tasksView, tasksModel);
 var tasksController = Object.assign({}, tasksControllerSpecifics, tasksCreationController);
 tasksController.initialize(); // Everything for lists
 
@@ -37062,14 +37055,14 @@ var listsTargetElement = document.getElementById('lists');
 var listsTargetButton = document.getElementById('list-add');
 var listsTargetField = document.getElementById('list-input');
 var initialListsData = [];
-var listsViewSpecifics = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_7__.listsViewFactory)(listsTargetElement, listsTargetButton, listsTargetField);
-var listsCreationView = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_7__.itemsCreationView)('list');
+var listsViewSpecifics = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_6__.listsViewFactory)(listsTargetElement, listsTargetButton, listsTargetField);
+var listsCreationView = (0,_view_view_js__WEBPACK_IMPORTED_MODULE_6__.itemsCreationView)('list');
 var listsView = Object.assign({}, listsViewSpecifics, listsCreationView);
-var listsModelSpecifics = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_8__.listsModelFactory)();
-var listsCreationModel = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_8__.itemsCreationModel)(initialListsData);
+var listsModelSpecifics = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_7__.listsModelFactory)();
+var listsCreationModel = (0,_model_model_js__WEBPACK_IMPORTED_MODULE_7__.itemsCreationModel)(initialListsData);
 var listsModel = Object.assign({}, listsModelSpecifics, listsCreationModel);
-var listsControllerSpecifics = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_9__.listsControllerFactory)();
-var listsCreationController = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_9__.itemsCreationController)(listsView, listsModel);
+var listsControllerSpecifics = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_8__.listsControllerFactory)();
+var listsCreationController = (0,_controller_controller_js__WEBPACK_IMPORTED_MODULE_8__.itemsCreationController)(listsView, listsModel);
 var listsController = Object.assign({}, listsControllerSpecifics, listsCreationController);
 listsController.initialize();
 /* logic of todo app

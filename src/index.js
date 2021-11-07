@@ -17,6 +17,12 @@ import { tasksControllerFactory, listsControllerFactory, itemsCreationController
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
+// #region Firebase UI Part
+// Initialize the FirebaseUI Widget using Firebase.
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseUi = new firebaseui.auth.AuthUI(firebaseApp.auth());
+const firebaseDatabase = getDatabase(firebaseApp);
+
 /**
  * Initializes the app.
  */
@@ -32,12 +38,6 @@ import 'firebase/compat/auth';
     });
 }
 window.addEventListener('load', initApp);
-
-// #region Firebase UI Part
-// Initialize the FirebaseUI Widget using Firebase.
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseUi = new firebaseui.auth.AuthUI(firebaseApp.auth());
-const firebaseDatabase = getDatabase(firebaseApp);
 
 // The start method will wait until the DOM is loaded.
 firebaseUi.start('#firebaseui-auth-container', firebaseUiConfig)

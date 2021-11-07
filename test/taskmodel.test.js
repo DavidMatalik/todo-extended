@@ -1,4 +1,4 @@
-import { Task } from '../src/Model/taskmodel.js'
+import { Task } from '../src/model/taskmodel.js'
 import { describe, it } from 'mocha'
 import assert from 'assert'
 

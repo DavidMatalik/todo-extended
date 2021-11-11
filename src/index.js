@@ -14,8 +14,9 @@ import { tasksModelFactory, listsModelFactory, itemsCreationModel } from './mode
 import { tasksControllerFactory, listsControllerFactory, itemsCreationController } from './controller/controller.js'
 
 // Firebase v9 compat (we use this until firebaseui is fully compatible with v9)
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import firebase from 'firebase/compat/app'
+// ToDo: check if we need this
+import 'firebase/compat/auth'
 
 // #region Firebase UI Part
 // Initialize the FirebaseUI Widget using Firebase.
@@ -26,7 +27,7 @@ const firebaseDatabase = getDatabase(firebaseApp);
 /**
  * Initializes the app.
  */
- var initApp = function() {
+ const initApp = function() {
     document.getElementById('sign-out').addEventListener('click', function() 
     {
         firebase.auth().signOut();

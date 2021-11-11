@@ -8,7 +8,7 @@ import { ref, set, remove } from "firebase/database";
  * @param {E-Mail of the user} email 
  * @param {Url to profile pictore of the user} imageUrl 
  */
-var writeUserData = function(database, userId, name, email, imageUrl) 
+const writeUserData = function(database, userId, name, email, imageUrl) 
 {
   set(ref(database, 'users/' + userId), {
     username: name,
@@ -22,7 +22,7 @@ var writeUserData = function(database, userId, name, email, imageUrl)
  * @param {Firebase instance} firebase 
  * @param {Firebase database} database 
  */
-var deleteAccount = function(firebase, database) 
+const deleteAccount = function(firebase, database) 
 {
    var user = firebase.auth().currentUser;
    // delete user in database

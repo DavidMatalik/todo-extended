@@ -38,6 +38,7 @@
    document.getElementById('container').style.display = 'none';
    document.getElementById('firebaseui-auth-container').style.display = 'block';
    firebaseUi.start('#firebaseui-auth-container', firebaseUiConfig)
+   // ToDo: clean up work: delete user information in DOM
  };
 
  export { handleSignedInUser, handleSignedOutUser }

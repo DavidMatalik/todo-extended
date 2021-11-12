@@ -24,7 +24,7 @@ const writeUserData = function(database, userId, name, email, imageUrl)
  */
 const deleteAccount = function(firebase, database) 
 {
-   var user = firebase.auth().currentUser;
+   const user = firebase.auth().currentUser;
    // delete user in database
    remove(ref(database, 'users/' + user.uid)).then(function(error)
    {

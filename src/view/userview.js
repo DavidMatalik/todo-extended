@@ -2,7 +2,7 @@
  * Displays the UI for a signed in user.
  * @param {!firebase.User} user
  */
- var handleSignedInUser = function(user) 
+ const handleSignedInUser = function(user) 
  {
    document.getElementById('container').style.display = 'block';
    document.getElementById('firebaseui-auth-container').style.display = 'none';
@@ -12,7 +12,7 @@
  
    if (user.photoURL) 
    {
-     var photoURL = user.photoURL;
+     let photoURL = user.photoURL;
      // Append size to the photo URL for Google hosted images to avoid requesting
      // the image with its original resolution (using more bandwidth than needed)
      // when it is going to be presented in smaller size.
@@ -33,7 +33,7 @@
  /**
   * Displays the UI for a signed out user.
   */
- var handleSignedOutUser = function(firebaseUi, firebaseUiConfig) 
+ const handleSignedOutUser = function(firebaseUi, firebaseUiConfig) 
  {
    document.getElementById('container').style.display = 'none';
    document.getElementById('firebaseui-auth-container').style.display = 'block';

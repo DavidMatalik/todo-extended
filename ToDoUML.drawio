@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-26T17:53:39.980Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" etag="rIAUUNFMjIht1ey-jTVX" version="15.5.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-24T19:27:53.201Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="oHwBHSsF-o2wWiVknW-a" version="15.7.3" type="github">
   <diagram id="eOCSV4TAboX4JURnP9C4" name="Seite-1">
-    <mxGraphModel dx="2858" dy="1109" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1747" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -160,13 +160,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="fGt8f_qGY14LkmYrRQs4-14" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;taskview.js&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- renderTask &lt;sup&gt;5&lt;/sup&gt;&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;- renderDone&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- bindDone(&lt;span style=&quot;background-color: rgb(102 , 178 , 255)&quot;&gt;handleDone&lt;/span&gt;)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="615.5" y="1108" width="190" height="102" as="geometry" />
+          <mxGeometry x="615.5" y="1098" width="190" height="122" as="geometry" />
         </mxCell>
         <mxCell id="fGt8f_qGY14LkmYrRQs4-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="hnSfwi1Ho9SDqRFrZ4Va-92" target="fGt8f_qGY14LkmYrRQs4-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="fGt8f_qGY14LkmYrRQs4-15" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;span style=&quot;font-weight: 700&quot;&gt;itemview.js (Abstract Class)&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ container: HTMLElement&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;+ inputField&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;+ createItemButton&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ renderAll(control) &lt;sup&gt;3, 5&lt;/sup&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- renderEdit(control) &lt;sup&gt;3&lt;/sup&gt;&lt;br style=&quot;padding: 0px ; margin: 0px&quot;&gt;-&amp;nbsp;renderDeleteButton(control) &lt;sup&gt;3&lt;/sup&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- bindCreate(&lt;span style=&quot;background-color: rgb(205 , 162 , 190)&quot;&gt;handleCreate&lt;/span&gt;)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- bindEdit(&lt;span style=&quot;background-color: rgb(205 , 162 , 190)&quot;&gt;handleEdit&lt;/span&gt;)&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- bindDelete(&lt;span style=&quot;background-color: rgb(205 , 162 , 190)&quot;&gt;handleDelete&lt;/span&gt;)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="332" y="935.5" width="190" height="180" as="geometry" />
+          <mxGeometry x="332" y="926.96" width="190" height="196.75" as="geometry" />
         </mxCell>
         <mxCell id="fGt8f_qGY14LkmYrRQs4-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shadow=0;" parent="1" source="fGt8f_qGY14LkmYrRQs4-28" target="hnSfwi1Ho9SDqRFrZ4Va-92" edge="1">
           <mxGeometry relative="1" as="geometry" />

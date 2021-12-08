@@ -1,21 +1,21 @@
 import { Item } from './itemmodel.js'
 
 class List extends Item {
-  constructor (title) {
+  constructor(title) {
     super(title)
     this._active = true
     this._tasks = []
   }
 
-  get active () {
+  get active() {
     return this._active
   }
 
-  toggleActive () {
+  toggleActive() {
     this._active = !this._active
   }
 
-  get tasks () {
+  get tasks() {
     return this._tasks
   }
 
@@ -23,17 +23,17 @@ class List extends Item {
     this._tasks.push(task)
   }
 
-  deleteTaskById (id) {
-    const taskIndex = this._tasks.findIndex(task => {
+  deleteTaskById(id) {
+    const taskIndex = this._tasks.findIndex((task) => {
       return task.id === id
     })
 
     this._tasks.splice(taskIndex, 1)
   }
 
-  getTasksByStatus (tasks, status) {
+  getTasksByStatus(tasks, status) {
     const statusTasks = []
-    tasks.forEach(task => {
+    tasks.forEach((task) => {
       if (task.done === status) {
         statusTasks.push(task)
       }

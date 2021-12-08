@@ -5,24 +5,22 @@ const tasksControllerFactory = function () {
 
 // Code specifically for lists
 const listsControllerFactory = function () {
-  return {
-
-  }
+  return {}
 }
 
 // Controller-Mixin to create items for tasks, lists, undertasks
 const itemsCreationController = function (itemsView, itemsModel) {
-  function onClickAddItem () {
+  function onClickAddItem() {
     itemsView.setNewItemText()
     itemsModel.addItem(itemsView.newItemText)
     itemsView.renderExistingItems(itemsModel.data)
   }
-  function onClickDeleteItem (event) {
+  function onClickDeleteItem(event) {
     const itemToDeleteID = event.target.dataset.itemid
     itemsModel.deleteItem(itemToDeleteID)
     itemsView.renderExistingItems(itemsModel.data)
   }
-  function initialize () {
+  function initialize() {
     itemsView.onClickAddItem = onClickAddItem
     itemsView.onClickDeleteItem = onClickDeleteItem
     itemsView.initialize()
@@ -32,12 +30,12 @@ const itemsCreationController = function (itemsView, itemsModel) {
 
 // Controller-Mixin to validate user input for tasks, lists, undertasks
 const itemValidationController = function () {
-  return {
-
-  }
+  return {}
 }
 
 export {
-  itemsCreationController, itemValidationController,
-  listsControllerFactory, tasksControllerFactory
+  itemsCreationController,
+  itemValidationController,
+  listsControllerFactory,
+  tasksControllerFactory
 }

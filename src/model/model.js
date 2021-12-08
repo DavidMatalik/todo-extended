@@ -34,13 +34,7 @@ const itemsCreationModel = function (data) {
 
 // Model-Mixin to validate user input for tasks, lists, undertasks
 const itemValidationModel = function () {
-  return {
-
-  }
+  return {}
 }
 
-export  {
-            itemsCreationModel, itemValidationModel,
-            tasksModelFactory, listsModelFactory
-
-        }
+export { itemsCreationModel, itemValidationModel, tasksModelFactory, listsModelFactory }

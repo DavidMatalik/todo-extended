@@ -12,8 +12,10 @@ describe('list tests', function () {
       const list1 = [task1, task2, task3, task4]
       const list = new List('MyNewList')
       const tasks = list.getTasksByStatus(list1, true)
-      assert.deepStrictEqual(tasks, [{ title: 'task1', id: 'ca55c127-89ff-49b1-a062-5b2e46bb318e', done: true },
-        { title: 'task4', id: '875b6011-ec60-4488-9806-d304f66d3e44', done: true }])
+      assert.deepStrictEqual(tasks, [
+        { title: 'task1', id: 'ca55c127-89ff-49b1-a062-5b2e46bb318e', done: true },
+        { title: 'task4', id: '875b6011-ec60-4488-9806-d304f66d3e44', done: true }
+      ])
     })
   })
   describe('active tests', function () {

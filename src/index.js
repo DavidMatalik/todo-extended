@@ -1,13 +1,13 @@
 // using ES6 imports:
 // full qualified path for webpack esm style
 import { firebaseConfig, firebaseUiConfig } from '../auth/config.js'
-import { getDatabase } from "firebase/database"
+import { getDatabase } from 'firebase/database'
 
-import * as firebaseui from "firebaseui"
+import * as firebaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
 
-import { handleSignedInUser, handleSignedOutUser } from "./view/userview.js"
-import { deleteAccount } from "./model/userdbmapper.js"
+import { handleSignedInUser, handleSignedOutUser } from './view/userview.js'
+import { deleteAccount } from './model/userdbmapper.js'
 
 import { tasksViewFactory, listsViewFactory, itemsCreationView } from './view/view.js'
 import { tasksModelFactory, listsModelFactory, itemsCreationModel } from './model/model.js'
@@ -20,38 +20,39 @@ import 'firebase/compat/auth'
 
 // #region Firebase UI Part
 // Initialize the FirebaseUI Widget using Firebase.
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseUi = new firebaseui.auth.AuthUI(firebaseApp.auth());
-const firebaseDatabase = getDatabase(firebaseApp);
+const firebaseApp = firebase.initializeApp(firebaseConfig)
+const firebaseUi = new firebaseui.auth.AuthUI(firebaseApp.auth())
+const firebaseDatabase = getDatabase(firebaseApp)
+
+some_unused_var = 42
+
+let x
 
 /**
  * Initializes the app.
  */
- const initApp = function() {
-    document.getElementById('sign-out').addEventListener('click', function() 
-    {
-        firebase.auth().signOut();
-    });
+const initApp = function () {
+  document.getElementById('sign-out').addEventListener('click', function () {
+    firebase.auth().signOut()
+  })
 
-    document.getElementById('delete-account').addEventListener('click', function() 
-    {
-        deleteAccount(firebase, firebaseDatabase);
-    });
+  document.getElementById('delete-account').addEventListener('click', function () {
+    deleteAccount(firebase, firebaseDatabase)
+  })
 }
-window.addEventListener('load', initApp);
+window.addEventListener('load', initApp)
 
 // The start method will wait until the DOM is loaded.
 firebaseUi.start('#firebaseui-auth-container', firebaseUiConfig)
 
 // Listen to change in auth state so it displays the correct UI for when
 // the user is signed in or not.
-firebase.auth().onAuthStateChanged(function(user) 
-{
-  document.getElementById('loader').style.display = 'none';
+firebase.auth().onAuthStateChanged(function (user) {
+  document.getElementById('loader').style.display = 'none'
   // document.getElementById('loaded').style.display = 'block';
-  user ? handleSignedInUser(user) : handleSignedOutUser(firebaseUi, firebaseUiConfig);
-});
-//#endregion
+  user ? handleSignedInUser(user) : handleSignedOutUser(firebaseUi, firebaseUiConfig)
+})
+// #endregion
 
 // Everything for tasks
 const tasksTargetElement = document.getElementById('tasks')

@@ -39,8 +39,7 @@ const itemValidationModel = function () {
   }
 }
 
-export  {
-            itemsCreationModel, itemValidationModel,
-            tasksModelFactory, listsModelFactory
-
-        }
+export {
+  itemsCreationModel, itemValidationModel,
+  tasksModelFactory, listsModelFactory
+}

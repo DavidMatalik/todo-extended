@@ -24,10 +24,6 @@ const firebaseApp = firebase.initializeApp(firebaseConfig)
 const firebaseUi = new firebaseui.auth.AuthUI(firebaseApp.auth())
 const firebaseDatabase = getDatabase(firebaseApp)
 
-some_unused_var = 42
-
-let x
-
 /**
  * Initializes the app.
  */

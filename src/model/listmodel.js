@@ -19,7 +19,7 @@ class List extends Item {
     return this._tasks
   }
 
-  addTask(task) {
+  addTask (task) {
     this._tasks.push(task)
   }
 

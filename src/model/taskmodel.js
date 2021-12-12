@@ -1,16 +1,16 @@
 import { Item } from './itemmodel.js'
 
 class Task extends Item {
-  constructor(title) {
+  constructor (title) {
     super(title)
     this._done = false
   }
 
-  get done() {
+  get done () {
     return this._done
   }
 
-  toggleDone() {
+  toggleDone () {
     this._done = !this._done
   }
 }

@@ -19,7 +19,7 @@ const itemsCreationView = function (itemName) {
 
   function initialize () {
     this.addButton.addEventListener('click', this.onClickAddItem)
-  };
+  }
   function setNewItemText () {
     this.newItemText = this.inputField.value
   }
@@ -27,7 +27,7 @@ const itemsCreationView = function (itemName) {
     this.inputField.value = ''
     this.htmlElement.innerHTML = ''
     viewModel.forEach(renderOneItem, this)
-  };
+  }
   function renderOneItem (itemObject) {
     const itemID = itemObject.id
     const p = document.createElement('p')
@@ -43,7 +43,7 @@ const itemsCreationView = function (itemName) {
     p.classList.add(`${itemName}`)
 
     this.htmlElement.appendChild(p)
-  };
+  }
   return {
     initialize, setNewItemText, renderExistingItems, onClickAddItem, onClickDeleteItem
   }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "build": "webpack --progress && firebase deploy",
-    "start": "webpack serve",
+    "start": "webpack serve --stats-error-details",
     "lint": "eslint"
   },
   "repository": {
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "firebase": "^9.1.2",
+    "firebaseui": "^0.600.0",
     "style-loader": "^2.0.0"
   }
 }

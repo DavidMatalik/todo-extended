@@ -10,6 +10,8 @@ import 'firebaseui/dist/firebaseui.css'
 import { firebaseConfig, firebaseUiConfig } from '../auth/config.js'
 import { deleteAccount } from './model/userdbmapper.js'
 import { handleSignedInUser, handleSignedOutUser } from './view/userview.js'
+import { initItem } from './view/itemview.js'
+import { initList } from './view/listview.js'
 
 // #region Firebase UI Part
 // Initialize the FirebaseUI Widget using Firebase.
@@ -19,16 +21,22 @@ const firebaseDatabase = getDatabase(firebaseApp)
 
 // Initializes the app.
 const initApp = function () {
-  document.getElementById('sign-out').addEventListener('click', function () {
-    firebase.auth().signOut()
-  })
+  document
+    .getElementById('sign-out')
+    .addEventListener('click', function () {
+      firebase.auth().signOut()
+    })
 
   document
     .getElementById('delete-account')
     .addEventListener('click', function () {
       deleteAccount(firebase, firebaseDatabase)
     })
+
+  initItem()
+  initList()
 }
+
 window.addEventListener('load', initApp)
 
 // The start method will wait until the DOM is loaded.

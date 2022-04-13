@@ -1,4 +1,4 @@
-import { Item } from '../src/model/itemmodel.js'
+import { Item } from '../../src/model/itemmodel.js'
 import { describe, it, xit } from 'mocha'
 import assert from 'assert'
 

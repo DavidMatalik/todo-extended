@@ -1,3 +1,4 @@
+
 import chai, { expect } from 'chai'
 import chaiDom from 'chai-dom'
 import { JSDOM } from 'jsdom'
@@ -31,12 +32,20 @@ beforeEach(() => {
 
 describe('list view tests', () => {
   describe('render list tests', () => {
-    it('shout be able to render a list after click of add button', () => {
-      assert.equal('Hello'.length, 5)
+    it('shout be able to render a list with input text after click of add button', () => {
+      assert.strictEqual('Hello'.length, 5)
       expect('Hello'.length).to.eql(5)
     })
 
-    it('should be able to render a list with title "undefined list" if no title for the list is specified', () => {
+    it('should be able to edit the list element after double click on the list element', () => {
+
+    })
+
+    it('should be delete list element after click on delete list button', () => {
+
+    })
+
+    it('should be able to render a list with title "untitled" if no title for the list is specified', () => {
       // eslint-disable-next-line no-unused-expressions
       expect(document.querySelector('#list-container')).to.be.visible
     })

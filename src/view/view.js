@@ -22,6 +22,9 @@ const itemsCreationView = function (itemName) {
   }
   function setNewItemText () {
     this.newItemText = this.inputField.value
+    if (this.newItemText === '') {
+      this.newItemText = 'untitled'
+    }
   }
   function renderExistingItems (viewModel) {
     this.inputField.value = ''

@@ -1,6 +1,6 @@
-import { GoogleAuthProvider, EmailAuthProvider } from "firebase/auth"
-import { handleSignedInUser } from "../src/view/userview.js"
-import { writeUserData } from "../src/model/userdbmapper.js"
+import { GoogleAuthProvider, EmailAuthProvider } from 'firebase/auth'
+import { handleSignedInUser } from '../src/view/userview.js'
+import { writeUserData } from '../src/model/userdbmapper.js'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,15 +21,14 @@ const firebaseUiConfig =
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
-      if (authResult.user) 
-      {
-        handleSignedInUser(authResult.user);
-      }  
+      if (authResult.user) {
+        handleSignedInUser(authResult.user)
+      }
 
       writeUserData(firebaseDatabase, authResult.user.uid, authResult.user.displayName, authResult.user.email, null)
       document.getElementById('container').removeAttribute('hidden')
       // Do not redirect.
-      return false;
+      return false
     },
     uiShown: function () {
       // The widget is rendered.

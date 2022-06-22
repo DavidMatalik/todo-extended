@@ -5,9 +5,7 @@ const tasksControllerFactory = function () {
 
 // Code specifically for lists
 const listsControllerFactory = function () {
-  return {
-
-  }
+  return {}
 }
 
 // Controller-Mixin to create items for tasks, lists, undertasks
@@ -32,9 +30,7 @@ const itemsCreationController = function (itemsView, itemsModel) {
 
 // Controller-Mixin to validate user input for tasks, lists, undertasks
 const itemValidationController = function () {
-  return {
-
-  }
+  return {}
 }
 
 export {

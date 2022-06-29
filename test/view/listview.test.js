@@ -2,9 +2,10 @@
 import chai, { expect } from 'chai'
 import chaiDom from 'chai-dom'
 import { JSDOM } from 'jsdom'
-import { describe, it, xit, beforeEach } from 'mocha'
+import { describe, xit, beforeEach } from 'mocha'
 import fs from 'fs'
-import { itemsCreationView, listsViewFactory } from '../../src/view/view.js'
+
+import { renderList } from '../../src/view/listview.js'
 
 chai.use(chaiDom)
 
@@ -17,17 +18,13 @@ beforeEach(() => {
 
 describe('list view tests', () => {
   describe('render list tests', () => {
-    it('shout be able to render a list with input text and delete button after click of add button', () => {
+    xit('shout be able to render a list with input text and delete button after click of add button', () => {
       const listName = 'my new List'
       document.querySelector('#list-input').value = listName
-      const listsTargetElement = document.getElementById('lists')
-      const listsTargetButton = document.getElementById('list-add')
-      const listsTargetField = document.getElementById('list-input')
-      const listsViewSpecifics = listsViewFactory(listsTargetElement, listsTargetButton, listsTargetField)
-      const listsCreationView = itemsCreationView('list')
-      const listsView = Object.assign({}, listsViewSpecifics, listsCreationView)
-      listsView.initialize()
+      // like this?
       document.querySelector('#list-add').click()
+      // or this?
+      renderList()
       // eslint-disable-next-line no-unused-expressions
       expect(document.querySelector('#list-container')).to.be.visible
       // eslint-disable-next-line no-unused-expressions

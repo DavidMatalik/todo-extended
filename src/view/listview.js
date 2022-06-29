@@ -24,4 +24,9 @@ const initList = function () {
   listsController.initialize()
 }
 
-export { initList }
+// Future code
+const renderList = function () {
+  // not implemented yet
+}
+
+export { initList, renderList }

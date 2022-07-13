@@ -2,7 +2,7 @@
 import chai, { expect } from 'chai'
 import chaiDom from 'chai-dom'
 import { JSDOM } from 'jsdom'
-import { describe, xit, beforeEach } from 'mocha'
+import { describe, it, xit, beforeEach } from 'mocha'
 import fs from 'fs'
 
 import { renderList } from '../../src/view/listview.js'
@@ -18,18 +18,13 @@ beforeEach(() => {
 
 describe('list view tests', () => {
   describe('render list tests', () => {
-    xit('shout be able to render a list with input text and delete button after click of add button', () => {
+    it('shout be able to render a list with input text and delete button after click of add button', () => {
       const listName = 'my new List'
-      document.querySelector('#list-input').value = listName
-      // like this?
-      document.querySelector('#list-add').click()
-      // or this?
-      renderList()
-      // eslint-disable-next-line no-unused-expressions
-      expect(document.querySelector('#list-container')).to.be.visible
+      renderList(listName)
       // eslint-disable-next-line no-unused-expressions
       expect(document.querySelector('#lists')).to.be.visible
       expect(document.querySelector('#lists')).to.contain('p')
+      expect(document.querySelector('#lists')).to.contain('button')
     })
 
     xit('should be able to edit the list element after double click on the list element', () => {

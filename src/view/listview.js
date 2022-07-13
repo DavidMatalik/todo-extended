@@ -25,8 +25,21 @@ const initList = function () {
 }
 
 // Future code
-const renderList = function () {
+const renderList = function (listName) {
   // not implemented yet
+
+  const listsTargetElement = document.getElementById('lists')
+
+  const p = document.createElement('p')
+  const deleteButton = document.createElement('button')
+
+  deleteButton.innerHTML = 'del'
+  deleteButton.classList.add('delete-button')
+
+  p.innerHTML = listName
+  p.appendChild(deleteButton)
+
+  listsTargetElement.appendChild(p)
 }
 
 export { initList, renderList }

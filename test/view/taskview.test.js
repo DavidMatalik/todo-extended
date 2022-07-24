@@ -2,7 +2,7 @@ import chai, { expect } from 'chai'
 import chaiDom from 'chai-dom'
 import fs from 'fs'
 import { JSDOM } from 'jsdom'
-import { beforeEach, describe, it, xit } from 'mocha'
+import { beforeEach, describe, xit } from 'mocha'
 
 import { bindDone, renderDone } from '../../src/view/taskview.js'
 
@@ -13,13 +13,12 @@ beforeEach(() => {
   const dom = new JSDOM(html)
   global.window = dom.window
   global.document = dom.window.document
-  global.getEventListeners = dom.window.getEventListeners
 })
 
-const createTaskDummy = (id) => {
+const createTaskDummy = (id, text) => {
   // Our real task has probably a more complex structure, adjust this when needed
   const task = document.createElement('div')
-  task.dataset.id = id
+  task.id = id
 
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
@@ -30,12 +29,24 @@ const createTaskDummy = (id) => {
 }
 
 describe('task view tests', () => {
+  xit('should be able to render a task with input text, delete button and checkbox', () => {
+    const taskName = 'my new Task'
+    const taskId = 'x123'
+    renderTask(taskId, taskName)
+
+    expect(document.querySelector('#tasks')).to.contain('div')
+    expect(document.querySelector('#x123')).to.contain.text('my new Task')
+    expect(document.querySelector('#x123')).to.contain('button')
+    expect(document.querySelector('#x123')).to.contain('input')
+  })
+
   describe('renderDone tests', () => {
     xit('should be able to mark a task as done', () => {
-      const taskId = '123'
-      createTaskDummy(taskId)
+      const taskId = 'xy'
+      const taskText = 'Some text'
+      createTaskDummy(taskId, taskText)
 
-      const doneTask = document.querySelector(`[data-id='${taskId}']`)
+      const doneTask = document.querySelector('#xy')
       const doneTaskCheckbox = doneTask.querySelector('input')
 
       expect(doneTask.style.textDecoration).to.equal('')
@@ -49,11 +60,12 @@ describe('task view tests', () => {
   })
 
   describe('bindDone tests', () => {
-    it('should be able to add an event listener to task checkbox', () => {
-      const taskId = '123'
-      createTaskDummy(taskId)
+    xit('should be able to add an event listener to task checkbox', () => {
+      const taskId = 'xy'
+      const taskText = 'Some text'
+      createTaskDummy(taskId, taskText)
 
-      const task = document.querySelector(`[data-id='${taskId}']`)
+      const task = document.querySelector('#xy')
       const doneTaskCheckbox = task.querySelector('input')
       let eventCallbackExecuted = false
       const eventCallbackDummy = () => {
@@ -62,6 +74,9 @@ describe('task view tests', () => {
       const handleDoneDummy = () => {}
 
       bindDone(handleDoneDummy, eventCallbackDummy)
+
+      expect(eventCallbackExecuted).to.equal(false)
+
       doneTaskCheckbox.click()
 
       expect(eventCallbackExecuted).to.equal(true)

@@ -25,21 +25,23 @@ const initList = function () {
 }
 
 // Future code
-const renderList = function (listName) {
+const renderList = function (id, text) {
   // not implemented yet
 
-  const listsTargetElement = document.getElementById('lists')
+  // // sample code
+  // const listsTargetElement = document.getElementById('lists')
 
-  const p = document.createElement('p')
-  const deleteButton = document.createElement('button')
+  // const div = document.createElement('div')
+  // const deleteButton = document.createElement('button')
 
-  deleteButton.innerHTML = 'del'
-  deleteButton.classList.add('delete-button')
+  // deleteButton.innerHTML = 'del'
+  // deleteButton.classList.add('delete-button')
 
-  p.innerHTML = listName
-  p.appendChild(deleteButton)
+  // div.id = id
+  // div.innerHTML = text
+  // div.appendChild(deleteButton)
 
-  listsTargetElement.appendChild(p)
+  // listsTargetElement.appendChild(div)
 }
 
 export { initList, renderList }

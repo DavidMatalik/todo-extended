@@ -16,22 +16,21 @@ beforeEach(() => {
   global.document = dom.window.document
 })
 
-// Future code
-// const createListDummy = function (id, text) {
-//   // sample code
-//   const listsTargetElement = document.getElementById('lists')
+const createListDummy = function (id, text) {
+  // sample code
+  const listsTargetElement = document.getElementById('lists')
 
-//   const p = document.createElement('p')
-//   const deleteButton = document.createElement('button')
+  const p = document.createElement('p')
+  p.id = id
+  p.innerHTML = text
 
-//   deleteButton.innerHTML = 'del'
-//   deleteButton.classList.add('delete-button')
+  const deleteButton = document.createElement('button')
+  deleteButton.innerHTML = 'del'
+  deleteButton.classList.add('delete-button')
 
-//   p.innerHTML = listName
-//   p.appendChild(deleteButton)
-
-//   listsTargetElement.appendChild(p)
-// }
+  p.appendChild(deleteButton)
+  listsTargetElement.appendChild(p)
+}
 
 describe('list view tests', () => {
   describe('render list tests', () => {
@@ -48,7 +47,13 @@ describe('list view tests', () => {
     })
 
     xit('should be able to highlight the list element', () => {
-
+      const listName = 'my new List'
+      const listId = 'x123'
+      createListDummy(listId, listName)
+      const highList = document.querySelector('x123')
+      expect(document.querySelector('#x123')).to.have.style('background-color', '')
+      renderHighlight(listId)
+      expect(document.querySelector('#x123')).to.have.style('background-color', 'aqua')
     })
 
     xit('should be able to render a list with title "untitled" if no title for the list is specified', () => {

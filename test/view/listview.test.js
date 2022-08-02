@@ -5,7 +5,7 @@ import { JSDOM } from 'jsdom'
 import { describe, it, xit, beforeEach } from 'mocha'
 import fs from 'fs'
 
-import { renderList, renderHighlight } from '../../src/view/listview.js'
+import { renderList, renderHighlight, bindHighlight } from '../../src/view/listview.js'
 
 chai.use(chaiDom)
 
@@ -50,14 +50,31 @@ describe('list view tests', () => {
       const listName = 'my new List'
       const listId = 'x123'
       createListDummy(listId, listName)
-      const highList = document.querySelector('x123')
       expect(document.querySelector('#x123')).to.have.style('background-color', '')
       renderHighlight(listId)
       expect(document.querySelector('#x123')).to.have.style('background-color', 'aqua')
     })
 
-    xit('should be able to render a list with title "untitled" if no title for the list is specified', () => {
-      expect(document.querySelector('#list-container')).to.be.visible()
+    xit('should be able to add an event listener to the list element', () => {
+      const listName = 'my new List'
+      const listId = 'x123'
+      createListDummy(listId, listName)
+
+      const list = document.querySelector('#x123')
+      let eventCallbackExecuted = false
+      const eventCallbackDummy = () => {
+        eventCallbackExecuted = true
+      }
+
+      const handleHighlightDummy = () => {}
+
+      bindHighlight(handleHighlightDummy, eventCallbackDummy)
+
+      expect(eventCallbackExecuted).to.equal(false)
+
+      list.click()
+
+      expect(eventCallbackExecuted).to.equal(true)
     })
   })
 })

@@ -44,8 +44,7 @@ const renderList = function (id, text) {
   // listsTargetElement.appendChild(div)
 }
 
-const renderHighlight = function (id) {
+const renderHighlight = function (id) {}
+const bindHighlight = function (handleHighlight, eventCallback) {}
 
-}
-
-export { initList, renderList, renderHighlight }
+export { initList, renderList, renderHighlight, bindHighlight }

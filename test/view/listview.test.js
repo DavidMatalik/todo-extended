@@ -4,6 +4,7 @@ import chaiDom from 'chai-dom'
 import { JSDOM } from 'jsdom'
 import { describe, it, xit, beforeEach } from 'mocha'
 import fs from 'fs'
+
 import { renderList, renderHighlight, bindHighlight } from '../../src/view/listview.js'
 
 chai.use(chaiDom)

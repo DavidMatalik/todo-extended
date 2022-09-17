@@ -24,4 +24,8 @@ const initItem = function () {
   tasksController.initialize()
 }
 
-export { initItem }
+const renderDelete = function (id) {
+  document.getElementById(id).remove()
+}
+
+export { initItem, renderDelete }

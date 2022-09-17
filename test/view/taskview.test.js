@@ -4,7 +4,7 @@ import fs from 'fs'
 import { JSDOM } from 'jsdom'
 import { beforeEach, describe, xit } from 'mocha'
 
-import { bindDone, renderDone } from '../../src/view/taskview.js'
+import { bindDone, renderDone, renderTask } from '../../src/view/taskview.js'
 
 chai.use(chaiDom)
 

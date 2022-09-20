@@ -28,7 +28,9 @@ const createListDummy = function (id, text) {
   deleteButton.classList.add('delete-button')
 
   p.appendChild(deleteButton)
+  const p1 = document.createElement('p')
   listsTargetElement.appendChild(p)
+  listsTargetElement.appendChild(p1)
 }
 
 const createTaskDummy = (id, text) => {
@@ -63,9 +65,10 @@ describe('item view tests', () => {
       const listName = 'my new List'
       const listId = 'x123'
       createListDummy(listId, listName)
-      expect(document.querySelector('#lists')).to.contain('p')
+      // expect(document.querySelector('#lists')).to.contain('p').with.id('x123')
+      expect(document.querySelector('#lists')).to.have.descendant('p').with.id('x123')
       renderDelete('x123')
-      expect(document.querySelector('#lists')).not.to.contain('p')
+      expect(document.querySelector('#lists')).to.have.descendant('p').not.with.id('x123')
     })
     it('should be delete task element after click on delete task button', () => {
       const taskName = 'my new Task'

@@ -34,7 +34,7 @@ const createListDummy = function (id, text) {
 
 describe('list view tests', () => {
   describe('render list tests', () => {
-    xit('shout be able to render a list with input text and delete button after click of add button', () => {
+    xit('should render a list with input text and delete button after click of add button', () => {
       const listName = 'my new List'
       const id = 'x123'
       renderList(id, listName)
@@ -46,7 +46,7 @@ describe('list view tests', () => {
       expect(document.querySelector('#x123')).to.contain('button')
     })
 
-    xit('should be able to highlight the list element', () => {
+    xit('should highlight the list element', () => {
       const listName = 'my new List'
       const listId = 'x123'
       createListDummy(listId, listName)
@@ -55,7 +55,7 @@ describe('list view tests', () => {
       expect(document.querySelector('#x123')).to.have.style('background-color', 'aqua')
     })
 
-    xit('should be able to add an event listener to the list element', () => {
+    xit('should add an event listener to the list element', () => {
       const listName = 'my new List'
       const listId = 'x123'
       createListDummy(listId, listName)

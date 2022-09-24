@@ -28,4 +28,6 @@ const renderDelete = function (id) {
   document.getElementById(id).remove()
 }
 
-export { initItem, renderDelete }
+const bindDelete = function () {}
+
+export { initItem, renderDelete, bindDelete }

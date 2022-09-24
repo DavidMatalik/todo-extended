@@ -29,7 +29,7 @@ const createTaskDummy = (id, text) => {
 }
 
 describe('task view tests', () => {
-  xit('should be able to render a task with input text, delete button and checkbox', () => {
+  xit('should render a task with input text, delete button and checkbox', () => {
     const taskName = 'my new Task'
     const taskId = 'x123'
     renderTask(taskId, taskName)
@@ -41,7 +41,7 @@ describe('task view tests', () => {
   })
 
   describe('renderDone tests', () => {
-    xit('should be able to mark a task as done', () => {
+    xit('should mark a task as done', () => {
       const taskId = 'xy'
       const taskText = 'Some text'
       createTaskDummy(taskId, taskText)
@@ -60,7 +60,7 @@ describe('task view tests', () => {
   })
 
   describe('bindDone tests', () => {
-    xit('should be able to add an event listener to task checkbox', () => {
+    xit('should add an event listener to task checkbox', () => {
       const taskId = 'xy'
       const taskText = 'Some text'
       createTaskDummy(taskId, taskText)

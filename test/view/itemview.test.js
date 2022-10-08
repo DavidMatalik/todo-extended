@@ -1,10 +1,10 @@
 import chai, { expect } from 'chai'
 import chaiDom from 'chai-dom'
-import { JSDOM } from 'jsdom'
-import { describe, it, xit, beforeEach } from 'mocha'
 import fs from 'fs'
+import { JSDOM } from 'jsdom'
+import { beforeEach, describe, it, xit } from 'mocha'
 
-import { renderDelete, bindDelete } from '../../src/view/itemview.js'
+import { bindDelete, renderDelete } from '../../src/view/itemview.js'
 
 chai.use(chaiDom)
 
@@ -21,12 +21,17 @@ const createListDummy = function (id, text) {
 
   const p = document.createElement('p')
   p.id = id
-  p.innerHTML = text
+
+  const span = document.createElement('span')
+  span.innerHTML = text
+  span.classList.add('editable')
+  span.contentEditable = true
 
   const deleteButton = document.createElement('button')
   deleteButton.innerHTML = 'del'
   deleteButton.classList.add('delete-button')
 
+  p.appendChild(span)
   p.appendChild(deleteButton)
   const p1 = document.createElement('p')
   listsTargetElement.appendChild(p)
@@ -55,9 +60,7 @@ const createTaskDummy = (id, text) => {
 
 describe('item view tests', () => {
   describe('edit item tests', () => {
-    xit('should edit the item element after double click on the item element', () => {
-
-    })
+    xit('should edit the item element after double click on the item element', () => {})
   })
 
   describe('delete item tests', () => {
@@ -127,5 +130,32 @@ describe('item view tests', () => {
 
       expect(eventCallbackExecuted).to.equal(true)
     })
+  })
+
+  describe('edit item tests', () => {
+    it('list element should be editable after click on list element', () => {
+      const lists = document.querySelector('#lists')
+      const listName = 'my new List'
+      const listId = 'x123'
+      createListDummy(listId, listName)
+      const list = lists.querySelector('#x123')
+      expect(lists.querySelector('#x123')).to.contain.text('my new List')
+
+      // Todo:
+      // Expect that list element span is not editable
+      list.click()
+      // Expect that list element span is editable
+
+      // Write some other text into span of list element
+      // Click on other element or set focus to False
+      // Expect that other text is in span
+      // Expect that span is not editable
+    })
+
+    // Todo: Do the same for task item
+
+    // Todo: Write bindEdit test for list item
+
+    // Todo: Write bindEdit test for task item
   })
 })
